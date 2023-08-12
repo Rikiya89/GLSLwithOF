@@ -5,7 +5,7 @@ void ofApp::setup(){
     ofSetFrameRate(60);
     shader.load("shader");
 }
-
+ 
 //--------------------------------------------------------------
 void ofApp::update(){
 
@@ -15,6 +15,8 @@ void ofApp::update(){
 void ofApp::draw(){
     ofSetColor(255);
     shader.begin();
+    shader.setUniform1f("time", ofGetElapsedTimef());
+    shader.setUniform2f("resolution", ofGetWidth(), ofGetHeight());
     ofDrawRectangle(0, 0, ofGetWidth(), ofGetHeight());
     shader.end();
 }
