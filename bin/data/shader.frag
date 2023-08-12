@@ -5,8 +5,9 @@ uniform float time;
 uniform vec2 resolution;
 
 void main (){
-    float red = gl_FragCoord.x / resolution.x;
-    float green = 0.5;
-    float blue = gl_FragCoord.y / resolution.y;
+    vec2 uv = gl_FragCoord.xy / resolution.xy;
+    float red = sin(uv.x * 10.0 + time * 20.0);
+    float green = sin(uv.x * 10.0 + time * 30.0);
+    float blue = sin(uv.x * 10.0 + time * -20.0);
     outputColor = vec4(red, green, blue, 1.0);
 }

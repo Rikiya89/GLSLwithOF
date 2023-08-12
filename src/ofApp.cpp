@@ -5,7 +5,7 @@ void ofApp::setup(){
     ofSetFrameRate(60);
     shader.load("shader");
 }
- 
+
 //--------------------------------------------------------------
 void ofApp::update(){
 
